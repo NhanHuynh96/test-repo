@@ -10,7 +10,7 @@ jobs:
       with:
         # token: ${{ secrets.CODECOV_TOKEN }}
         file: ./cover.out
-        flags: unittests
-        env_vars: OS,GO
+        # flags: unittests
+        # env_vars: OS,GO
         name: codecov-umbrella
         fail_ci_if_error: true
