@@ -4,13 +4,13 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-    - uses: codecov/codecov-action@v1
+    - uses: actions/checkout@master
     - name: Upload coverage to Codecov
-      use: ./
+      uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./cover.out
-        flags: unittest
+        file: ./coverage.xml
+        flags: unittests
         env_vars: OS,GO
-        name: codecov-test
+        name: codecov-umbrella
         fail_ci_if_error: true
