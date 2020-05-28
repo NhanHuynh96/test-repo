@@ -1,16 +1,16 @@
-name: Codecov
-on: [push]
+on: ["push", "pull_request"]
+
+name: Test Coveralls
+
 jobs:
-  run:
+
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
+
     - uses: actions/checkout@master
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
       with:
-        # token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./
-        # flags: unittests
-        # env_vars: OS,GO
-        name: codecov-umbrella
-        fail_ci_if_error: true
+        github-token: ${{ secrets.GITHUB_TOKEN }}
