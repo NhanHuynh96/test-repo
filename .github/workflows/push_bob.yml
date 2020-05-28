@@ -9,8 +9,8 @@ jobs:
       uses: codecov/codecov-action@v1.0.7
       with:
         # token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./cover.txt
-        flags: unittests
+        file: ./cover
+        flags: unit
         # env_vars: OS,GO
         name: codecov-umbrella
         fail_ci_if_error: true
