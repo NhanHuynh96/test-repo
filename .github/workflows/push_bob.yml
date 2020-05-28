@@ -1,10 +1,9 @@
-name: Codecov
-on: [push]
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Upload coverage to Codecov
-      run: |
-        bash <(curl -s https://codecov.io/bash)
+steps:
+  - uses: actions/checkout@master
+  - uses: codecov/codecov-action@v1.0.7
+    with:
+      # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+      file: ./coverage.out # optional
+      flags: unittests # optional
+      name: codecov-umbrella # optional
+      fail_ci_if_error: true # optional (default = false)
