@@ -6,11 +6,5 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1.0.7
-      with:
-        # token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./cover
-        flags: unit
-        # env_vars: OS,GO
-        name: codecov-umbrella
-        fail_ci_if_error: true
+      run: |
+        bash <(curl -s https://codecov.io/bash)
