@@ -1,0 +1,14 @@
+name: Codecov
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./cover.out
+        flags: unittests
+        env_vars: OS,GO
+        name: codecov-test
+        fail_ci_if_error: true
